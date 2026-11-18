@@ -1,0 +1,66 @@
+architecture: safi_net
+pipeline_start_stage: joint
+seed: 3407
+data:
+  root: null
+  manifest: null
+  crop_size: 256
+pretrained_root: null
+run_dir: null
+precision: bf16
+workers: 4
+prefetch_factor: 1
+model:
+  target_gate:
+    policy: full_image
+    segmentation_enabled: false
+  perception:
+    kind: pmt_small_coco
+    input_size: 640
+    microbatch: 4
+    target_classes:
+    - person
+    - bicycle
+    - car
+    - motorcycle
+    - bus
+    - truck
+    person_score_threshold: 0.8
+    mask_threshold: 0.5
+    overlap_mask_area_threshold: 0.8
+  fusion_region: all
+optimizer:
+  weight_decay: 0.0001
+  grad_clip: 1.0
+stages:
+  joint:
+    max_steps: 15000
+    batch_size: 27
+    accumulation: 2
+    task_lr: 1.0e-05
+    task_lr_min: 5.0e-06
+    ir_flow_lr: 0.0
+    vis_flow_lr: 0.0
+    temporal_warmup_steps: 500
+    workers: 4
+    pin_memory: true
+    early_stopping:
+      enabled: true
+      patience: 5
+      min_delta: 0.0001
+      min_steps: 2000
+save_every: 1000
+log_every: 10
+validate_every: 1000
+validation_clips: 150
+fusion:
+  mode: full_image
+  residual_scale: 0.25
+  target_gain: 0.5
+  target_luma_weight: 1.0
+  target_detail_weight: 0.5
+  interp_vis_weight: 3.0
+  temporal_weight: 0.1
+  reference_l1_weight: 1.0
+  reference_gradient_weight: 0.1
+  temporal_lowfreq_weight: 0.1

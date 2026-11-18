@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+build/
+dist/
+runs/
+outputs/
+weights/
+*.pt
+*.pth
+*.pkl
+*.safetensors
+!pretrained/rife/flownet.pkl
+!pretrained/dinov3/model.safetensors
