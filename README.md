@@ -15,6 +15,7 @@
 
 <p>
   <a href="#why-safi-net">✨ Why SAFI-Net?</a> ·
+  <a href="#video-demo">🎞️ Video Demo</a> ·
   <a href="#method">🧩 Method</a> ·
   <a href="#quick-start">⚡ Quick Start</a> ·
   <a href="#inference">▶️ Inference</a> ·
@@ -39,6 +40,12 @@ When one camera runs slower than the other, a fused video still needs aligned in
 | Brightness fluctuations | Applies bounded thermal enhancement and trains with a temporal brightness consistency loss. |
 
 On HDO, M3SVD, and VTMOT, SAFI-Net improves visual quality at lower computational cost than the evaluated cascades. It also improves temporal consistency for different-rate inputs and supports downstream multi-object tracking on VTMOT under missing observations.
+
+## Video Demo
+
+![Side-by-side video of visible input, infrared input, and SAFI-Net output. Both input panels mark missing frames while SAFI-Net produces the intermediate fused frames.](assets/video-demo.gif)
+
+*A nighttime pedestrian clip from HDO (`hdo_x`). Each input retains every other frame at 5 FPS, and SAFI-Net produces fused video at 10 FPS. Shaded panels hold the last observed image and mark the missing input times.*
 
 ## Method
 
