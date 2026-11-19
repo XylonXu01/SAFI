@@ -2,6 +2,8 @@
 
 ## 🎬 Semantic Guidance for Joint Infrared-Visible Video Fusion and Frame Interpolation
 
+[![arXiv](https://img.shields.io/badge/arXiv-2611.24277-b31b1b.svg)](https://arxiv.org/abs/2611.24277)
+
 ![Graphical abstract showing SAFI alongside cascaded methods for same-rate and different-rate infrared–visible inputs](assets/overview.png)
 
 *Graphical abstract. With same-rate inputs, both modalities can lack an observation at the target time. With a faster visible stream, the observed visible frame guides infrared reconstruction.*
