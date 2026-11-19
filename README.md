@@ -45,7 +45,7 @@ On HDO, M3SVD, and VTMOT, SAFI-Net improves visual quality at lower computationa
 
 ![Side-by-side video of visible input, infrared input, and SAFI-Net output. Both input panels mark missing frames while SAFI-Net produces the intermediate fused frames.](assets/video-demo.gif)
 
-*A nighttime pedestrian clip from HDO (`hdo_x`). Each input retains every other frame at 5 FPS, and SAFI-Net produces fused video at 10 FPS. Shaded panels hold the last observed image and mark the missing input times.*
+*A pedestrian walking up stairs in M3SVD (`m3_0111_1716`). Each input retains every other frame at 5 FPS, and SAFI-Net produces fused video at 10 FPS. Shaded panels hold the last observed image and mark the missing input times.*
 
 ## Method
 
