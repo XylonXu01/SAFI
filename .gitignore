@@ -7,10 +7,14 @@ build/
 dist/
 runs/
 outputs/
-weights/
+/weights/*
 *.pt
 *.pth
 *.pkl
 *.safetensors
 !pretrained/rife/flownet.pkl
 !pretrained/dinov3/model.safetensors
+!/weights/safi_net.pt
+!/weights/safi_net.pt.sha256
+!/weights/DINOv3-LICENSE.md
+!/weights/RIFE-LICENSE

@@ -32,7 +32,14 @@ python -m pip install -e .
 
 ## Inference
 
-Place the self-contained `safi_net.pt` release asset in `weights/`. It includes the task network, DINOv3, and both trained RIFE_m branches. Use it with all three commands below. An existing SAFI-Net training `best.pt` also works with the original backbone files under `pretrained/`.
+The self-contained [`weights/safi_net.pt`](weights/safi_net.pt) checkpoint includes the task network, DINOv3, and both trained RIFE_m branches. Download it from the file page and place it under `weights/`, or use [Git LFS](https://git-lfs.com/) in your checkout.
+
+```sh
+git lfs install --local
+git lfs pull --include="weights/safi_net.pt"
+```
+
+An existing SAFI-Net training `best.pt` also works with the original backbone files under `pretrained/`.
 
 > **🎞️ Try the demo.** The demo contains nine synthetic, spatially aligned pairs at 256 × 192 pixels.
 
@@ -103,6 +110,6 @@ For the test suite, install `python -m pip install -e '.[dev]'` and run `python 
 
 ## Weight distribution and credits
 
-Attach `safi_net.pt`, `safi_net.pt.sha256`, and the [DINOv3](pretrained/dinov3/LICENSE.md) and [RIFE](pretrained/rife/LICENSE) licenses to the GitHub Release. The repository ignores local copies under `weights/`. After downloading, run `(cd weights && sha256sum -c safi_net.pt.sha256)`. See [GitHub release assets](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
+Verify the checkpoint with `(cd weights && sha256sum -c safi_net.pt.sha256)`. The [DINOv3 license](weights/DINOv3-LICENSE.md) and [RIFE license](weights/RIFE-LICENSE) accompany the checkpoint.
 
 SAFI-Net uses [DINOv3 ViT-S/16](https://huggingface.co/facebook/dinov3-vits16-pretrain-lvd1689m) and [RIFE_m](https://github.com/hzwer/ECCV2022-RIFE). The vendored RIFE and [PMT](https://github.com/tue-mps/pmt) source notices are in [`safi_net/third_party/`](safi_net/third_party/).
