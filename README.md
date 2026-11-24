@@ -43,9 +43,7 @@ On HDO, M3SVD, and VTMOT, SAFI-Net improves visual quality at lower computationa
 
 ## Video Demo
 
-![Side-by-side video of visible and infrared inputs at 15 FPS and SAFI-Net fusion output at 30 FPS.](assets/video-demo.gif)
-
-*The full 151-frame M3SVD sequence `m3_0111_1716`. Visible and infrared inputs each update at 15 FPS, holding the previous observation between updates. SAFI-Net output plays at 30 FPS. The synchronized loop lasts approximately 5.03 seconds.*
+![Same-rate and different-rate infrared–visible inputs compared with SAFI-Net output.](assets/video-demo.gif)
 
 ## Method
 
